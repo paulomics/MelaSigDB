@@ -10,6 +10,10 @@ Search_Signature <- function(signature = c("all"),
                              method = c("all")) {
   df <- MelaSigDB::Metadata_Sig
 
+  stopifnot(is.character(signature),
+            is.character(organsim),
+            is.character(method))
+
   signature_lower <- as.vector(tolower(signature))
   organsim_lower <- as.vector(tolower(organsim))
   method_lower <- as.vector(tolower(method))
@@ -65,7 +69,7 @@ Search_Signature <- function(signature = c("all"),
   }
 
   target_final <- intersect(target_method, target_organism)
-  target_final <- intersect(target_signature, target_organism)
+  target_final <- intersect(target_signature, target_final)
 
   return(target_final)
 }
