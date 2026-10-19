@@ -41,10 +41,11 @@ Get_Single_Signature_Rank <- function(signature = NULL,
         "Please provide a valid numeric value for 'top_genes_cutoff' to apply the 'ordering' ranking method."
       )
     }
-    rank_all <- system.file(
+    rank_all_file <- system.file(
       "extdata/ranking/ordering.csv",
       package = "MelaSigDB"
     )
+    rank_all <- rio::import(rank_all_file)
     rank_all <- rank_all[rank_all$SIGNATURE == signature, ]
     if (top_genes_cutoff > length(na.omit(unique(rank_all$HUMAN_SY)))) {
       top_genes_cutoff <- length(na.omit(unique(rank_all$HUMAN_SY)))
@@ -82,10 +83,11 @@ Get_Single_Signature_Rank <- function(signature = NULL,
       )
     }
     if (!is.null(top_genes_cutoff) | is.numeric(top_genes_cutoff)) {
-      rank_df <- system.file(
+      rank_df_file <- system.file(
         paste0("extdata/ranking/", ranking_reference, ".csv"),
         package = "MelaSigDB"
       )
+      rank_df <- rio::import(rank_df_file)
       rank_df <- rank_df[rank_df$cluster == signature, ]
       rank_df <- aggregate(cbind(prol_med_expr, inv_med_expr) ~ gene,
                            data = rank_df,
@@ -118,10 +120,11 @@ Get_Single_Signature_Rank <- function(signature = NULL,
     if (!is.null(logFC_cutoff) & !is.null(top_genes_cutoff)) {
       stop("Please choose between 'logFC_cutoff' and 'top_genes_cutoff' subset method.")
     }
-    rank_df <- system.file(
+    rank_df_file <- system.file(
       paste0("extdata/ranking/", ranking_reference, ".csv"),
       package = "MelaSigDB"
     )
+    rank_df <- rio::import(rank_df_file)
     rank_df <- rank_df[rank_df$cluster == signature, ]
 
     if (!is.null(top_genes_cutoff) &
