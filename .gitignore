@@ -1,1 +1,5 @@
 .Rproj.user
+.gitignore
+.Rbuildignore
+.Rhistory
+MelaSigDB.Rproj
