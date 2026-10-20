@@ -1,9 +1,9 @@
 #' Search_Signature
 #'
-#' @param signature Name of the signature.
-#' @param organsim Name of the organsim
-#' @param method Name of the method
-#' @return Vector of corresponding signatures.
+#' @param signature character vector informing signature·s name·s, **see Infos_Signature**, to search in the metadata, doesn't have to be the exact names.
+#' @param organsim character vector informing organism·s, **human and/or mouse**,rom which signature where made to search in the metadata.
+#' @param method character vector informing method·s, **scrna, brna and/or microarray**, from which signature where made to search in the metadata.
+#' @return Vector of corresponding **exact signatures names**.
 #' @export
 Search_Signature <- function(signature = c("all"),
                              organsim = c("all"),

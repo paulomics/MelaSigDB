@@ -7,7 +7,7 @@
 Loaded_references()
 }
 \value{
-List of references
+List of signature references.
 }
 \description{
 Loaded_references

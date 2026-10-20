@@ -1,12 +1,12 @@
 #' Get_Single_Signature_Rank
 #'
-#' @param signature Name of the signature.
-#' @param top_genes_cutoff Top genes cutoff.
-#' @param logFC_cutoff FC cutoff.
-#' @param organism_format Name of organism for the output gene format
-#' @param gene_format Name of the gene format
-#' @param output_format Name of the output format
-#' @return Vector of genes associated with the signatures.
+#' @param signature character informing single signature name, **see Infos_Signature**, to search in the metadata, have to be the exact names.
+#' @param top_genes_cutoff Numeric value informing the top genes cutoff of the query signatures.
+#' @param logFC_cutoff Numeric value informing the log fold-change cutoff of the query signatures, available for signature with public differential expression data.
+#' @param organism_format character informing gene organism format, **mouse or human**, of the output genes set.
+#' @param gene_format character informing gene format, **symbol or ensembl or entrez**, of the output genes set.
+#' @param output_format character informing object format, **list or vector or data.frame**, of the output genes set.
+#' @return data.frame or vector or list of ranked genes associated with their signature.
 #' @export
 Get_Single_Signature_Rank <- function(signature = NULL,
                                       top_genes_cutoff = NULL,
@@ -18,6 +18,14 @@ Get_Single_Signature_Rank <- function(signature = NULL,
 
   if (is.null(signature)) {
     stop("Please provide a signature.")
+  }
+
+  if (length(signature) > 1){
+    stop("Please provide a single character signature.")
+  }
+
+  if (!is.character(signature)){
+    stop("Please provide a single character signature.")
   }
 
   if (!signature %in% df$signature_id) {

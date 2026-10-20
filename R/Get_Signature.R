@@ -1,12 +1,12 @@
 #' Get_Signature
 #'
-#' @param signature Name of the signature.
-#' @param organsim Name of the organsim
-#' @param method Name of the method
-#' @param organism_format Name of organism for the output gene format
-#' @param gene_format Name of the gene format
-#' @param output_format Name of the output format
-#' @return Vector of genes associated with the signatures.
+#' @param signature character vector informing signature·s name·s, **see Infos_Signature**, to search in the metadata, doesn't have to be the exact names.
+#' @param organsim character vector informing organism·s, **human and/or mouse**,rom which signature where made to search in the metadata.
+#' @param method character vector informing method·s, **scrna, brna and/or microarray**, from which signature where made to search in the metadata.
+#' @param organism_format character informing gene organism format, **mouse or human**, of the output genes set.
+#' @param gene_format character informing gene format, **symbol or ensembl or entrez**, of the output genes set.
+#' @param output_format character informing object format, **list or vector or data.frame**, of the output genes set.
+#' @return data.frame or vector or list of genes associated with their signatures.
 #' @export
 Get_Signature <- function(signature = "all",
                           organsim = "all",

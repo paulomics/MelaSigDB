@@ -1,8 +1,8 @@
 #' Plot_Sig_in_Panel
 #'
-#' @param ranked_sig_gene_set Name of the signature.
-#' @param panel_gene_set Top genes cutoff.
-#' @return Plot of overlapping genes set.
+#' @param ranked_sig_gene_set vector of ranked genes associated, get from Get_Single_Signature_Rank.
+#' @param panel_gene_set vector of genes panel to control.
+#' @return Plot of the distribution of the overlapping genes between genes set and genes panel by their rank in genes set.
 #' @export
 Plot_Sig_in_Panel <- function(ranked_sig_gene_set, panel_gene_set) {
   ranked_sig_gene_set <- unique(ranked_sig_gene_set)

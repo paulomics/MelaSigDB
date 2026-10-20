@@ -7,12 +7,12 @@
 Plot_Sig_in_Panel(ranked_sig_gene_set, panel_gene_set)
 }
 \arguments{
-\item{ranked_sig_gene_set}{Name of the signature.}
+\item{ranked_sig_gene_set}{vector of ranked genes associated, get from Get_Single_Signature_Rank.}
 
-\item{panel_gene_set}{Top genes cutoff.}
+\item{panel_gene_set}{vector of genes panel to control.}
 }
 \value{
-Plot of overlapping genes set.
+Plot of the distribution of the overlapping genes between genes set and genes panel by their rank in genes set.
 }
 \description{
 Plot_Sig_in_Panel

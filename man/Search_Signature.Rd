@@ -7,14 +7,14 @@
 Search_Signature(signature = c("all"), organsim = c("all"), method = c("all"))
 }
 \arguments{
-\item{signature}{Name of the signature.}
+\item{signature}{character vector informing signature·s name·s, \strong{see Infos_Signature}, to search in the metadata, doesn't have to be the exact names.}
 
-\item{organsim}{Name of the organsim}
+\item{organsim}{character vector informing organism·s, \strong{human and/or mouse},rom which signature where made to search in the metadata.}
 
-\item{method}{Name of the method}
+\item{method}{character vector informing method·s, \strong{scrna, brna and/or microarray}, from which signature where made to search in the metadata.}
 }
 \value{
-Vector of corresponding signatures.
+Vector of corresponding \strong{exact signatures names}.
 }
 \description{
 Search_Signature

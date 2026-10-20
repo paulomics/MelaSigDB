@@ -1,5 +1,5 @@
 #' Loaded_references
-#' @return List of references
+#' @return List of signature references.
 #' @export
 Loaded_references <- function() {
 

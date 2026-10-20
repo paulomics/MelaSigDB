@@ -14,20 +14,20 @@ Get_Signature(
 )
 }
 \arguments{
-\item{signature}{Name of the signature.}
+\item{signature}{character vector informing signature·s name·s, \strong{see Infos_Signature}, to search in the metadata, doesn't have to be the exact names.}
 
-\item{organsim}{Name of the organsim}
+\item{organsim}{character vector informing organism·s, \strong{human and/or mouse},rom which signature where made to search in the metadata.}
 
-\item{method}{Name of the method}
+\item{method}{character vector informing method·s, \strong{scrna, brna and/or microarray}, from which signature where made to search in the metadata.}
 
-\item{organism_format}{Name of organism for the output gene format}
+\item{organism_format}{character informing gene organism format, \strong{mouse or human}, of the output genes set.}
 
-\item{gene_format}{Name of the gene format}
+\item{gene_format}{character informing gene format, \strong{symbol or ensembl or entrez}, of the output genes set.}
 
-\item{output_format}{Name of the output format}
+\item{output_format}{character informing object format, \strong{list or vector or data.frame}, of the output genes set.}
 }
 \value{
-Vector of genes associated with the signatures.
+data.frame or vector or list of genes associated with their signatures.
 }
 \description{
 Get_Signature

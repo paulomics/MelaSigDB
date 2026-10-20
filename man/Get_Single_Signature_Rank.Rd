@@ -14,20 +14,20 @@ Get_Single_Signature_Rank(
 )
 }
 \arguments{
-\item{signature}{Name of the signature.}
+\item{signature}{character informing single signature name, \strong{see Infos_Signature}, to search in the metadata, have to be the exact names.}
 
-\item{top_genes_cutoff}{Top genes cutoff.}
+\item{top_genes_cutoff}{Numeric value informing the top genes cutoff of the query signatures.}
 
-\item{logFC_cutoff}{FC cutoff.}
+\item{logFC_cutoff}{Numeric value informing the log fold-change cutoff of the query signatures, available for signature with public differential expression data.}
 
-\item{organism_format}{Name of organism for the output gene format}
+\item{organism_format}{character informing gene organism format, \strong{mouse or human}, of the output genes set.}
 
-\item{gene_format}{Name of the gene format}
+\item{gene_format}{character informing gene format, \strong{symbol or ensembl or entrez}, of the output genes set.}
 
-\item{output_format}{Name of the output format}
+\item{output_format}{character informing object format, \strong{list or vector or data.frame}, of the output genes set.}
 }
 \value{
-Vector of genes associated with the signatures.
+data.frame or vector or list of ranked genes associated with their signature.
 }
 \description{
 Get_Single_Signature_Rank
